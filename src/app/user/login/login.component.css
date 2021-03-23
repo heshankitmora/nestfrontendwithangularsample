@@ -1,0 +1,16 @@
+.login-wrapper {
+  height: 100vh;
+  width: 100%;
+  background-color: #ececec;
+  display: flex;
+  align-items: center;
+}
+
+.login-wrapper > .login-box-wrapper {
+  max-width: 500px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #FFF;
+  padding: 20px;
+}

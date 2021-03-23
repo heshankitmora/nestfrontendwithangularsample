@@ -1,0 +1,18 @@
+<div class="login-wrapper">
+  <div class="login-box-wrapper">
+   <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+     <div class="form-group">
+       <input formControlName="email" class="form-control" type="email" placeholder="Enter Email Address"/>
+     </div>
+     <div class="form-group">
+       <input formControlName="password" class="form-control" type="password" placeholder="Enter Password"/>
+     </div>
+     <div class="form-group">
+       <input class="btn" type="submit" value="Login"/>
+     </div>
+     <div class="form-group">
+       <a class="btn">Register</a>
+     </div>
+   </form>
+  </div>
+</div>

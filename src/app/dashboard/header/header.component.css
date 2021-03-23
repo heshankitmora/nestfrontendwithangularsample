@@ -1,0 +1,11 @@
+header {
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: right;
+  background-color: aliceblue;
+}
+
+label {
+  padding-right: 30px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,42 @@
+<div class="main-wrapper">
+  <div *ngIf="!successRate">
+    <form>
+      <ul>
+        <ng-container *ngFor="let question of questionListArr; let i = index">
+          <li *ngIf="question?.questionanswers && question?.questionanswers.length > 0">
+            <div>
+              <p>
+                {{question?.question}}
+              </p>
+              <ng-container *ngIf="question?.questionanswers && question?.questionanswers.length > 0 && (!question?.questiontype || question?.questiontype === 0)">
+                <ul>
+                  <li *ngFor="let questionAnswer of question?.questionanswers">
+                    <label>
+                      <input type="radio" [value]="questionAnswer?._id" (change)="answerSelected($event, questionAnswer, question)" name="question-answer-{{i}}"/><span>{{questionAnswer?.answer}}</span>
+                    </label>
+                  </li>
+                </ul>
+              </ng-container>
+              <ng-container *ngIf="question?.questionanswers && question?.questionanswers.length > 0 && (question?.questiontype && question?.questiontype === 1)">
+                <ul>
+                  <li *ngFor="let questionAnswer of question?.questionanswers">
+                    <label>
+                      <input type="checkbox" [value]="questionAnswer?._id" (change)="answerSelected($event, questionAnswer, question)" name="question-answer[]"/><span>{{questionAnswer?.answer}}</span>
+                    </label>
+                  </li>
+                </ul>
+              </ng-container>
+            </div>
+          </li>
+        </ng-container>
+      </ul>
+      <input class="btn" (click)="selectedAnswersSave()" value="Submit Answers"/>
+      <br/>
+      <input class="btn" (click)="resetAnswers()" value="Reset Answers"/>
+    </form>
+  </div>
+  <div>
+    <p *ngIf="successRate">Correct Answers: {{successRate}}%</p>
+  </div>
+</div>
+
